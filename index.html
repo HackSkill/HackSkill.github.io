@@ -16,6 +16,15 @@
 
 <script>
 
+	function getHash(text) {
+		var sum = 0;
+
+			for(var i = 0; i < text.length; i++)
+				sum += text.charCodeAt(i);
+
+		return sum % 10;
+	}
+
 	function makeAnswer(text) {
 
 		document.getElementById("answerText").innerHTML = text;
@@ -23,7 +32,7 @@
 	}
 
 	function answer() {
-		var code = Math.random() * 10 | 0;
+		var code = getHash(document.getElementById('question').value);
 
 		switch(code)
 		{
@@ -67,7 +76,7 @@
 				makeAnswer('RIOT');
 			break;
 
-			case 10:
+			default:
 				makeAnswer('The Dome is near!');
 			break;
 		}
