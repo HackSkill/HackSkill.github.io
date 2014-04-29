@@ -4,11 +4,77 @@
 		<title>Ask the Helix!</title>
 	</head>
 
-	<body>
+	<body style="width:99%">
 
-	<div  style="display:block;margin:auto;">
-		<img src="./img/helix.png" />
+	<div  style="display:block;margin:auto;text-align:center">
+		<img src="./img/helix.png" width="500" height="400" />
+		<h1>What is your question, mortal?</h1>
+		<input type="text" id="question"/>
+		<input type="button" id="submitB" value="Ask!" onclick="javascript:answer();"/>
+		<h2 id="answerText"></h2>
 	</div>
+
+<script>
+
+	function makeAnswer(text) {
+
+		document.getElementById("answerText").innerHTML = text;
+
+	}
+
+	function answer() {
+		var code = Math.random() * 10 | 0;
+
+		switch(code)
+		{
+			case 0:
+				makeAnswer('A');
+			break;
+
+			case 1:
+				makeAnswer('B');
+			break;
+
+			case 2:
+				makeAnswer('UP');
+			break;
+
+			case 3:
+				makeAnswer('DOWN');
+			break;
+
+			case 4:
+				makeAnswer('LEFT');
+			break;
+
+			case 5:
+				makeAnswer('RIGHT');
+			break;
+
+			case 6:
+				makeAnswer('YES');
+			break;
+
+			case 7:
+				makeAnswer('NO');
+			break;
+
+			case 8:
+				makeAnswer('ANARACHY');
+			break;
+
+			case 9:
+				makeAnswer('RIOT');
+			break;
+
+			case 10:
+				makeAnswer('The Dome is near!');
+			break;
+		}
+	}
+
+</script>
+
 
 	</body>
 <html>
