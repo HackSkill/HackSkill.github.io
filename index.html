@@ -16,13 +16,17 @@
 
 <script>
 
+	answers = ['A', 'B', 'Down', 'Up', 'Left', 'Right', 'Select', 'Start', 'Start9', 'Yes', 'No', 
+	'ASH, this is not the time to do that!', 'The Dome is near!', 'Praise me!', 'RIOT!', 'Raise your Dongers!', 
+	'Guys we need to ... Misty!', 'Learn Rollout!', 'Masterball? Too easy...'];
+
 	function getHash(text) {
 		var sum = 0;
 
 			for(var i = 0; i < text.length; i++)
 				sum += text.charCodeAt(i);
 
-		return sum % 10;
+		return sum % answers.length;
 	}
 
 	function makeAnswer(text) {
@@ -33,53 +37,7 @@
 
 	function answer() {
 		var code = getHash(document.getElementById('question').value);
-
-		switch(code)
-		{
-			case 0:
-				makeAnswer('A');
-			break;
-
-			case 1:
-				makeAnswer('B');
-			break;
-
-			case 2:
-				makeAnswer('UP');
-			break;
-
-			case 3:
-				makeAnswer('DOWN');
-			break;
-
-			case 4:
-				makeAnswer('LEFT');
-			break;
-
-			case 5:
-				makeAnswer('RIGHT');
-			break;
-
-			case 6:
-				makeAnswer('YES');
-			break;
-
-			case 7:
-				makeAnswer('NO');
-			break;
-
-			case 8:
-				makeAnswer('ANARACHY');
-			break;
-
-			case 9:
-				makeAnswer('RIOT');
-			break;
-
-			default:
-				makeAnswer('The Dome is near!');
-			break;
-		}
+		makeAnswer(answers[code]);
 	}
 
 </script>
